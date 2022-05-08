@@ -1,0 +1,29 @@
+﻿@model UploadProject
+    @if(ViewBag.user.IsProjSent==true){
+                <h1 style="margin-top: 12%;
+                margin-bottom: 1.6%;
+                margin-left: 16%;padding-bottom: 2.5%;">لقد قمت بارسال مشروعك ، اذا كان هناك مشكلة يرجى ارسال رسالة لنا.</h1>
+
+    }
+    else
+    {
+        <form method="post" asp-action="UploadProject" asp-controller="Comptitve" class="send-project">
+            <img src="~/image/logo.png" alt="">
+            <div class="input-send-project">
+                <input type="text"
+                       class="form-control"
+                       id="inlineFormInputGroupUsername"
+                       asp-for="FullName"
+                       placeholder=" الاسم رباعي "
+                       required>
+
+            </div>
+            
+            <input type="url"
+                   id="url"
+                   asp-for="DriveLink"
+                   placeholder=" ( رابط درايف ) رابط المشروع"
+                   required>
+            <input type="submit" name="" value="ارسال" id="login">
+        </form>
+    }

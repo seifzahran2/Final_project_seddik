@@ -1,0 +1,45 @@
+﻿@model IEnumerable<UploadProject>
+
+    <!-- start table -->
+    <div id="none">
+                        <a href="#">kkDriveLink</a>
+                        <select id="cars" name="cars">
+                                    <option value="choose">اختر التقييم</option>
+                                    <option value="a">A</option>
+                                    <option value="b">B</option>
+                                    <option value="c">C</option>
+                                    <option value="d">D</option>
+                        </select>
+                        <input type="submit" value="حفظ"/>
+                        <div style="position:absolute;top:-20%;left:130%;color:#fff;" id="close">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                 <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                             </svg>
+                        </div>
+                    </div>
+        <div class="judge">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="none">الصوره الشخصيه</th>
+                        <th scope="col">الاسم</th>
+                        <th scope="col" class="none">التخصص</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <th scope="row" class="none"><img class="profile1" src="~/image/profile1.jpg" alt=""></th>
+                        <td>@item.FullName</td>
+                        <td class="none">@item.Specialization</td>
+                        
+                    </tr>
+                    
+                 }
+                 
+                </tbody>
+            </table>
+        </div>
+        <!-- end table -->
